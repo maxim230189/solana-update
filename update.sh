@@ -81,3 +81,6 @@ else
   echo "We are already on version ${version}, doing nothing..."
 fi
 catchup_info
+echo "Node successfully updated"
+
+
