@@ -59,7 +59,7 @@ fi
 
 catchup_info() {
   while true; do
-    rpcPort=$(ps aux | grep solana-validator | grep -Po "\-\-rpc\-port\s+\K[0-9]+")
+    rpcPort=$(ps aux | grep agave-validator | grep -Po "\-\-rpc\-port\s+\K[0-9]+")
     sudo -i -u root solana catchup --our-localhost $rpcPort
     status=$?
     if [ $status -eq 0 ];then
