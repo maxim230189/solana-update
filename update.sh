@@ -63,6 +63,7 @@ catchup_info() {
     sudo -i -u root solana catchup --our-localhost $rpcPort
     status=$?
     if [ $status -eq 0 ];then
+      echo "Node successfully updated"
       exit 0
     fi
     echo "waiting next 30 seconds for rpc"
@@ -81,6 +82,3 @@ else
   echo "We are already on version ${version}, doing nothing..."
 fi
 catchup_info
-echo "Node successfully updated"
-
-
