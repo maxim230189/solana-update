@@ -37,6 +37,7 @@ fi
 
 if [ $networkrpcURL = https://api.testnet.solana.com ];then
 version="$(wget -q -4 -O- https://api.margus.one/solana/version/?cluster=testnet)"
+version="2.0.24"
 maxdelinq=10
 mintime=10
 elif [ $networkrpcURL = https://api.mainnet-beta.solana.com ];then
