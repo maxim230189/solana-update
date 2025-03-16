@@ -277,6 +277,7 @@ stop_solana() {
         sleep 5
         systemctl disable solana.service
     fi
+    systemctl stop firedancer
 }
 
 # Run all installation steps
