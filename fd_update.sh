@@ -141,6 +141,7 @@ install_fd() {
     USERNAME="firedancer"
     USER_ID=$(id -u "$USERNAME")
     GROUP_ID=$(id -g "$USERNAME")
+    rm -rf /root/firedancer
     git clone --recurse-submodules https://github.com/firedancer-io/firedancer.git
     cd /root/firedancer
     git checkout v0.407.20113 # Or the latest Frankendancer release
@@ -290,6 +291,8 @@ echo -e "And start Firedancer: \033[0;32mservice firedancer start\033[0m"
 echo -e "You can check node status by the command: \033[0;32mservice firedancer status\033[0m"
 echo -e "You can check node logs by the command: \033[0;32mjournalctl -u firedancer -fn 50\033[0m"
 echo -e "You can check node logs by the command: \033[0;32mfdctl monitor --config /home/firedancer/solana_fd/solana-testnet.toml\033[0m"
+reboot now
+
 # echo -e '\033[0;32mChecking Firedancer status : \033[0m' && sleep 5
 # if [[ `service firedancer status | grep active` =~ "running" ]]; then
 #   echo -e "\033[0;32mYour node installed and works!\033[0m"
