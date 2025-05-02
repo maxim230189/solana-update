@@ -144,7 +144,7 @@ install_fd() {
     rm -rf /root/firedancer
     git clone --recurse-submodules https://github.com/firedancer-io/firedancer.git
     cd /root/firedancer
-    git checkout v0.411.20121 # Or the latest Frankendancer release
+    git checkout v0.502.20212 # Or the latest Frankendancer release
     git submodule update --init --recursive
     sed -i "/^[ \t]*results\[ 0 \] = pwd\.pw_uid/c results[ 0 ] = $USER_ID;" ~/firedancer/src/app/fdctl/config.c
     sed -i "/^[ \t]*results\[ 1 \] = pwd\.pw_gid/c results[ 1 ] = $GROUP_ID;" ~/firedancer/src/app/fdctl/config.c
