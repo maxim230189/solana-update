@@ -133,10 +133,10 @@ BIN="$ACTIVE_LINK/bin/agave-validator"
 log "⏳ Жду «окно рестарта» (wait-for-restart-window), чтобы не ловить высокий delinquent..."
 if [[ -n "$SNAPS" ]]; then
   "$BIN" --ledger "$LEDGER" --snapshots "$SNAPS" \
-    wait-for-restart-window --min-idle-time 20 --max-delinquent-stake 10
+    wait-for-restart-window --min-idle-time 10 --max-delinquent-stake 10
 else
   "$BIN" --ledger "$LEDGER" \
-    wait-for-restart-window --min-idle-time 20 --max-delinquent-stake 10
+    wait-for-restart-window --min-idle-time 10 --max-delinquent-stake 10
 fi
 
 log "♻️  Перезапускаю сервис solana (юнит НЕ изменяем, только рестарт)"
